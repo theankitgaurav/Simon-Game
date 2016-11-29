@@ -1,0 +1,239 @@
+html {
+  margin: 0px;
+  padding: 0px;
+  background-color: #FDE9C9;
+  font-family: monospace;
+}
+
+h1 {
+  text-align: center;
+  font-size: 64px;
+  font-weight: 900;
+  font-family: sans-serif;
+  color: #323232;
+}
+
+a {
+  text-decoration: none;
+  color: #3F72AF;
+}
+
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-box {
+  position: absolute;
+  top: 150px;
+}
+
+.controls-box {
+  position: absolute;
+  top: 70px;
+  left: 60px;
+  z-index: 500;
+  width: 170px;
+  height: 170px;
+  border: 10px solid #323232;
+  border-radius: 100%;
+  background-color: grey;
+  padding: 0 auto;
+  text-align: center;
+}
+
+.box {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  font-size: 64px;
+  text-align: center;
+  border: 10px solid #323232;
+  box-shadow: 5px 10px 10px #323232;
+  margin-left: -10px;
+  margin-bottom: -10px;
+  cursor: pointer;
+}
+
+.box1 {
+  background-color: #E84545;
+  border-radius: 100% 0 0 0;
+}
+
+.box2 {
+  background-color: #3F72AF;
+  border-radius: 0 100% 0 0;
+}
+
+.box3 {
+  background-color: #11D3BC;
+  border-radius: 0 0 0 100%;
+}
+
+.box4 {
+  background-color: #FFD460;
+  border-radius: 0 0 100% 0;
+}
+
+.active {
+  background-color: hsl(50, 50%, 10%);
+}
+
+.start-button {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 5px solid #323232;
+  box-shadow: 5px 5px 5px #323232;
+  z-index: 800;
+  background-color: #07D807;
+  text-align: center;
+  font-weight: 900;
+  font-size: 22px;
+  margin-top: 15%;
+  margin-left: 10px;
+  cursor: pointer;
+}
+.strict-mode-toggle{
+  display: block;
+  width: 50px;
+  height: 20px;
+  border-radius: 5px;
+  border: 3px solid #323232;
+  box-shadow: 2px 2px 2px #323232;
+  z-index: 800;
+  background-color: orange;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 10%;
+  margin-left: 50px;
+  padding: 2px 5px;
+  cursor: pointer;
+}
+.counter {
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  border: 5px solid #323232;
+  border-radius: 10px;
+  z-index: 800;
+  margin-left: 10px;
+  text-align: center;
+  font-weight: 900;
+  font-family: monospace;
+  font-size: 22px;
+  color: red;
+  background-color: maroon
+}
+.hi-score{
+  font-weight: 800;
+  color: darkgray;
+  margin-top: 15px;
+  font-size: 22px;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 5px 10px;
+  color: #323232;
+  font-size: 14px;
+  font-family: monospace
+}
+
+.hint {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  padding: 5px;
+  color: #323232;
+  font-size: 14px;
+  font-family: monospace;
+  z-index: 800;
+  background-color: #FDE9C9;
+}
+
+.help {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.help-box {
+  position: absolute;
+  margin-top: 100px;
+  width: 500px;
+  height: 300px;
+  border: 5px solid darkgray;
+  border-radius: 10px;
+  background-color: white;
+  box-shadow: 30px 30px 30px black;
+  z-index: 900;
+  color: brown;
+  font-family: monospace;
+  font-size: 16px;
+}
+.info-box{
+  margin-top: 30px;
+  text-align: center;
+  color: grey;
+  font-weight: 900;
+  font-size: 22px;
+}
+.red{
+  background-color: red;
+}
+/*
+For mobile responsiveness, simply scale the dimesions
+of the boxes
+*/
+
+@media only screen and (max-width: 670px) {
+  h1 {
+    font-size: 36px;
+  }
+  .game-box {
+    top: 100px;
+  }
+  .box {
+    width: 120px;
+    height: 120px;
+  }
+  .controls-box {
+    width: 110px;
+    height: 110px;
+  }
+  .counter, .start-button {
+    width: 30px;
+    height: 30px;
+    margin-top: 10%;
+    margin-left: 8px;
+    font-size: 18px;
+  }
+  .strict-mode-toggle{
+  display: block;
+  width: 45px;
+  height: 15px;
+  border-radius: 5px;
+  border: 2px solid #323232;
+  box-shadow: 2px 2px 2px #323232;
+  z-index: 800;
+  background-color: orange;
+  text-align: center;
+  font-weight: 500;
+  margin-top: 5%;
+  margin-left: 30px;
+  padding: 1px 3px;
+  cursor: pointer;
+}
+  .hi-score{
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  .help-box {
+    width: 300px;
+    top: 10px;
+  }
+}
