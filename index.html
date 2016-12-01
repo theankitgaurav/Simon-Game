@@ -1,76 +1,69 @@
 <!DOCTYPE html>
-<html >
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Simon Game</title>
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-
-  
-      <link rel="stylesheet" href="css/style.css">
-
-  
+    <meta charset="UTF-8">
+    <title>Simon Game</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
-  <div class="app">
-  <div class="game-box">
-    <div class="row">
-      <div class="box box1" v-on:click="clickedBox(1)" v-bind:class="{ active: isBoxOneActive}">
-        <audio id="audio1">
-          <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/ogg">
-        </audio>
-      </div>
-      <div class="box box2" v-on:click="clickedBox(2)" v-bind:class="{ active: isBoxTwoActive}">
-        <audio id="audio2">
-          <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/ogg">
-        </audio>
-      </div>
-    </div>
-    <div class="row">
-      <div class="box box3" v-on:click="clickedBox(3)" v-bind:class="{ active: isBoxThreeActive}">
-        <audio id="audio3">
-          <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/ogg">
-        </audio>
-      </div>
-      <div class="box box4" v-on:click="clickedBox(4)" v-bind:class="{ active: isBoxFourActive}">
-        <audio id="audio4">
-          <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/ogg">
-        </audio>
-      </div>
-    </div>
-
-    <div class="controls-box">
-      <div class="strict-mode-toggle" v-on:click="changeMode()" v-bind:class="{red: isStrictModeOn}"><span v-if="isStrictModeOn">Strict</span><span v-else>Normal</span></div>
-      <div class="start-button" v-on:click="changeState()" v-bind:class="{red: isPlaying}">&nbsp;</div>
-      <div class="counter">{{step}}</div>
-      <div class="hi-score">Hi {{hiScore}}</div>
-    </div>
-    <div class="info-box">{{message}}</div>
-<!--     <div class="info-box" v-if="state!='Start'">
+    <div class="app">
+        <div class="game-box">
+            <div class="row">
+                <div class="box box1" v-on:click="clickedBox(1)" v-bind:class="{ active: isBoxOneActive}">
+                    <audio id="audio1">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound1.mp3" type="audio/ogg">
+                    </audio>
+                </div>
+                <div class="box box2" v-on:click="clickedBox(2)" v-bind:class="{ active: isBoxTwoActive}">
+                    <audio id="audio2">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound2.mp3" type="audio/ogg">
+                    </audio>
+                </div>
+            </div>
+            <div class="row">
+                <div class="box box3" v-on:click="clickedBox(3)" v-bind:class="{ active: isBoxThreeActive}">
+                    <audio id="audio3">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound3.mp3" type="audio/ogg">
+                    </audio>
+                </div>
+                <div class="box box4" v-on:click="clickedBox(4)" v-bind:class="{ active: isBoxFourActive}">
+                    <audio id="audio4">
+                        <source src="https://s3.amazonaws.com/freecodecamp/simonSound4.mp3" type="audio/ogg">
+                    </audio>
+                </div>
+            </div>
+            <div class="controls-box">
+                <div class="strict-mode-toggle" v-on:click="changeMode()" v-bind:class="{red: isStrictModeOn}"><span v-if="isStrictModeOn">Strict</span><span v-else>Normal</span></div>
+                <div class="start-button" v-on:click="changeState()" v-bind:class="{red: isPlaying}">&nbsp;</div>
+                <div class="counter">{{step}}</div>
+                <div class="hi-score">Hi {{hiScore}}</div>
+            </div>
+            <div class="info-box">{{message}}</div>
+            <!--     <div class="info-box" v-if="state!='Start'">
       <div class="info-box" v-if="userTurn">Your turn</div>
       <div class="info-box" v-else>Computer's turn</div>
     </div> -->
-
-  </div>
-  <div class="help-box" v-if="showHelpBox">
-    <center>
-      <h3>Help</h3>
-      <ul>
-        <li>On starting the game, you will be given a series of button presses.</li>
-        <li>After your turn is shown, press the same buttons in the same sequence</li>
-        <li>You get one point for each consecutive correct sequence</li>
-      </ul>
-      <span class="help" v-on:click="showHelpBox = false">[Close Help]</span>
-    </center>
-  </div>
-  <h1>Simon Game</h1>
-  <div class="footer">Made with &hearts; by <a href="https://ankitgaurav.github.io" target="_blank">Ankit Gaurav</a></div>
-
-  <div class="hint">Press the green button to play <span class="help" v-on:click="showHelpBox = true">[Help]</span></div>
-  <script src='https://unpkg.com/vue@2.0.5/dist/vue.js'></script>
-
-    <script src="js/index.js"></script>
-
+        </div>
+        <div class="help-box" v-if="showHelpBox">
+            <center>
+                <h3>Help</h3>
+                <ul>
+                    <li>On starting the game, you will be given a series of button presses.</li>
+                    <li>After your turn is shown, press the same buttons in the same sequence</li>
+                    <li>You get one point for each consecutive correct sequence</li>
+                </ul>
+                <span class="help" v-on:click="showHelpBox = false">[Close Help]</span>
+            </center>
+        </div>
+        <h1>Simon Game</h1>
+        <div class="footer">Made with &hearts; by <a href="https://ankitgaurav.github.io" target="_blank">Ankit Gaurav</a></div>
+        <div class="hint">Press the green button to play <span class="help" v-on:click="showHelpBox = true">[Help]</span></div>
+        <script src='https://unpkg.com/vue@2.0.5/dist/vue.js'></script>
+        <script src="js/index.js"></script>
 </body>
+
 </html>
